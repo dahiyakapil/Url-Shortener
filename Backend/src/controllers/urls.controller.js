@@ -8,7 +8,8 @@ import mongoose from "mongoose";
 
 const createShortURL = async (req, res) => {
   const { originalUrl, remarks, expirationDate } = req.body;
-  const renderLink = process.env.BACKEND_RENDER_URL;
+  const renderLink =
+    process.env.BACKEND_RENDER_URL || "https://short-gibj.onrender.com";
   console.log(renderLink);
   const ipAddress =
     req.headers["x-forwarded-for"] || req.connection.remoteAddress;
