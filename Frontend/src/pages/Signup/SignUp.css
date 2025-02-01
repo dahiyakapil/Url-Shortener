@@ -78,23 +78,23 @@
   background-color: transparent; /* Ensure no background flash */
 }
 
-/* Handle focus state */
-.signup-btn:focus,
+
+/* .signup-btn:focus,
 .signup-btn:active,
 .login-btn:focus,
 .login-btn:active {
-  text-decoration: none; /* Ensure no underline */
-  outline: none; /* Remove outline on focus */
-  box-shadow: none; /* Remove any box shadow */
-  color: inherit; /* Maintain color consistency */
+  text-decoration: none; 
+  outline: none; 
+  box-shadow: none; 
+  color: inherit; 
 }
 
-/* Prevent default active state behaviors */
+
 .signup-btn:active,
 .login-btn:active {
-  transform: none; /* Avoid click effect */
-  background-color: transparent; /* Prevent color changes */
-}
+  transform: none; 
+  background-color: transparent; 
+} */
 
 /* Form Container */
 .form-container {
