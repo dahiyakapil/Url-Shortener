@@ -9,6 +9,7 @@ import mongoose from "mongoose";
 const createShortURL = async (req, res) => {
   const { originalUrl, remarks, expirationDate } = req.body;
   const renderLink = process.env.BACKEND_RENDER_URL;
+  console.log(renderLink);
   const ipAddress =
     req.headers["x-forwarded-for"] || req.connection.remoteAddress;
 
@@ -142,9 +143,6 @@ const createShortURL = async (req, res) => {
 //   }
 // });
 
-
-
-
 const redirectToUrl = asyncHandler(async (req, res) => {
   if (
     req.originalUrl === "/favicon.ico" ||
@@ -159,7 +157,7 @@ const redirectToUrl = asyncHandler(async (req, res) => {
   if (!url) {
     return res.status(404).json({
       success: false,
-      message: "Short URL not found or has been deleted"
+      message: "Short URL not found or has been deleted",
     });
   }
 
@@ -167,7 +165,7 @@ const redirectToUrl = asyncHandler(async (req, res) => {
   if (url.expirationDate && new Date(url.expirationDate) < new Date()) {
     return res.status(410).json({
       success: false,
-      message: "This link has expired and is no longer available"
+      message: "This link has expired and is no longer available",
     });
   }
 
@@ -195,7 +193,7 @@ const redirectToUrl = asyncHandler(async (req, res) => {
       success: true,
       redirectUrl: url.originalUrl,
       status: "active",
-      expiresAt: url.expirationDate
+      expiresAt: url.expirationDate,
     });
   } else {
     res.setHeader("Cache-Control", "no-store, no-cache");
@@ -558,36 +556,7 @@ const getClicksByDevice = async (req, res) => {
   }
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Delete Short URL Controller
-
-
-
-
-
 
 const getUrlsByRemarks = async (req, res) => {
   try {
@@ -596,42 +565,38 @@ const getUrlsByRemarks = async (req, res) => {
     if (!remarks) {
       return res.status(400).json({
         success: false,
-        message: 'Remarks search query parameter is required'
+        message: "Remarks search query parameter is required",
       });
     }
 
     // Case-insensitive search with partial matching
     const urls = await URL.find({
-      remarks: { 
-        $regex: new RegExp(remarks.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i') 
-      }
-    }).select('-__v -clickDetails -deviceClicks');
+      remarks: {
+        $regex: new RegExp(remarks.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"),
+      },
+    }).select("-__v -clickDetails -deviceClicks");
 
     if (urls.length === 0) {
       return res.status(404).json({
         success: false,
-        message: 'No URLs found with matching remarks'
+        message: "No URLs found with matching remarks",
       });
     }
 
     res.status(200).json({
       success: true,
       count: urls.length,
-      data: urls
+      data: urls,
     });
-
   } catch (error) {
-    console.error('Search error:', error);
+    console.error("Search error:", error);
     res.status(500).json({
       success: false,
-      message: 'Error searching URLs',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      message: "Error searching URLs",
+      error: process.env.NODE_ENV === "development" ? error.message : undefined,
     });
   }
 };
-
-
-
 
 const deleteUrlById = async (req, res) => {
   try {
@@ -639,7 +604,7 @@ const deleteUrlById = async (req, res) => {
 
     // Check if the provided _id is valid
     if (!id) {
-      return res.status(400).json({ message: 'MongoDB ID is required' });
+      return res.status(400).json({ message: "MongoDB ID is required" });
     }
 
     // Find and delete the URL document by _id
@@ -647,23 +612,18 @@ const deleteUrlById = async (req, res) => {
 
     // If no document is found, return a 404 error
     if (!deletedUrl) {
-      return res.status(404).json({ message: 'No URL found with that ID' });
+      return res.status(404).json({ message: "No URL found with that ID" });
     }
 
     // Return success response
-    return res.status(200).json({ message: 'URL deleted successfully', deletedUrl });
+    return res
+      .status(200)
+      .json({ message: "URL deleted successfully", deletedUrl });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: 'Error deleting URL', error });
+    return res.status(500).json({ message: "Error deleting URL", error });
   }
 };
-
-
-
-
-
-
-
 
 export {
   createShortURL,
@@ -677,5 +637,5 @@ export {
   getExpiredUrls,
   redirectToUrl,
   getUrlsByRemarks,
-  deleteUrlById
+  deleteUrlById,
 };

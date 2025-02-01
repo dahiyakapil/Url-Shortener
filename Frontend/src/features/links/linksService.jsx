@@ -6,7 +6,8 @@ import { base_url } from "../../utils/base_url";
 // Function to create a short link
 export const createShortLink = async (linkData) => {
   try {
-    const response = await axios.post(`${base_url}urls/create`, linkData);
+    const response = await axios.post(`${base_url}/api/urls/create`, linkData);
+    console.log(response)
     return response.data; // Assuming the API response contains the short URL
   } catch (error) {
     throw new Error("Failed to create short link"); // Error handling
