@@ -1,0 +1,85 @@
+.link-section {
+    margin: 20px;
+    background-color: rgb(235, 233, 233);
+    height: 100dvh;
+    padding: 20px;
+    overflow-x: auto; /* Allow horizontal scrolling on small screens */
+  }
+  
+  /* Table Styling */
+  .ant-table-thead > th {
+    background-color: blue !important;
+    color: #fff; /* Better contrast */
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .copy {
+    border: none;
+  }
+  
+  /* Pagination */
+  .css-dev-only-do-not-override-cdzvx5.ant-table-wrapper
+    .ant-table-pagination.ant-pagination {
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 20px !important;
+  }
+  
+  /* ---------------- RESPONSIVENESS ---------------- */
+  
+  /* Tablets & Small Screens */
+  @media (max-width: 1024px) {
+    .link-section {
+      height: auto;
+      padding: 15px;
+    }
+  
+    .ant-table {
+      overflow-x: auto; /* Horizontal scroll for tables */
+    }
+  }
+  
+  /* Mobile Devices */
+  @media (max-width: 768px) {
+    .link-section {
+      margin: 10px;
+      padding: 10px;
+      height: auto;
+    }
+  
+    .ant-table-thead > th {
+      font-size: 14px; /* Reduce header text size */
+      padding: 8px;
+    }
+  
+    .ant-table {
+      overflow-x: scroll;
+      display: block; /* Force table to be scrollable */
+    }
+  
+    .css-dev-only-do-not-override-cdzvx5.ant-table-wrapper
+      .ant-table-pagination.ant-pagination {
+      flex-wrap: wrap;
+    }
+  }
+  
+  /* Extra Small Screens */
+  @media (max-width: 480px) {
+    .link-section {
+      margin: 5px;
+      padding: 5px;
+    }
+  
+    .ant-table-thead > th {
+      font-size: 12px; /* Smaller font for compact view */
+    }
+  
+    .css-dev-only-do-not-override-cdzvx5.ant-table-wrapper
+      .ant-table-pagination.ant-pagination {
+      justify-content: center;
+      font-size: 12px;
+    }
+  }
+  

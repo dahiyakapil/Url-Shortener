@@ -1,0 +1,36 @@
+{
+  "name": "url-shortner-backend",
+  "version": "1.0.0",
+  "description": "A scalable and efficient backend serive for shortenning URLs, providing redirections, analytics, and CRUD operations.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon node src/index.js",
+    "server": "node src/index.js"
+  },
+  "author": "Kapil",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-async-handler": "^1.2.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5",
+    "morgan": "^1.10.0",
+    "nanoid": "^5.0.9",
+    "ua-parser-js": "^2.0.0",
+    "uniqid": "^5.4.0",
+    "user-agent": "^1.0.4",
+    "useragent": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

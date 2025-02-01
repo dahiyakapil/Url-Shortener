@@ -1,0 +1,187 @@
+.sidebar {
+  width: 25%;
+}
+
+.dashboard-items {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+.logo {
+  margin-left: 20px;
+}
+stats-container .item1 {
+  display: flex;
+  padding: 10px;
+  border-radius: 5px;
+  gap: 10px;
+
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.12px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #3b3c51;
+}
+
+.item1 {
+  display: flex;
+  padding: 10px;
+  border-radius: 5px;
+  gap: 10px;
+  cursor: pointer;
+
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.12px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #3b3c51;
+}
+.item2 {
+  display: flex;
+  padding: 10px;
+  border-radius: 5px;
+  gap: 10px;
+  cursor: pointer;
+
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.12px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #3b3c51;
+}
+.item3 {
+  display: flex;
+  padding: 10px;
+  border-radius: 5px;
+  gap: 10px;
+  cursor: pointer;
+
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.12px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #3b3c51;
+}
+
+.item1:hover,
+.item2:hover,
+.item3:hover {
+  background-color: #e0edfc;
+}
+
+.setting {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border: 2px 0 2px 0;
+  border-color: rgb(130, 126, 126);
+  border-radius: 5px;
+  margin-top: 50px;
+  cursor: pointer;
+
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.12px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #3b3c51;
+}
+
+.setting:hover {
+  background-color: #e0edfc;
+}
+
+.item1.active,
+.item2.active,
+.item3.active,
+.setting.active {
+  color: #1b48da;
+}
+
+.item1.active p,
+.item2.active p,
+.item3.active p,
+.setting.active p {
+  color: #1b48da;
+}
+
+/* ---------------- RESPONSIVENESS ---------------- */
+
+/* Tablets & Small Screens */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 475px;
+    height: 120px;
+
+    margin-top: 5px;
+    padding: 0;
+  }
+  .dashboard-items {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    width: 2px;
+    align-items: center;
+    margin-left: 12px;
+  }
+
+  .icon1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+  }
+  .icon2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+  }
+  .icon3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+  }
+  .setting {
+    margin-bottom: 50px;
+  }
+  .icon4 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+}
