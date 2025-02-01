@@ -3,6 +3,9 @@
 import axios from "axios";
 import { base_url } from "../../utils/base_url";
 
+console.log(base_url);
+
+
 // Function to create a short link
 export const createShortLink = async (linkData) => {
   try {
