@@ -70,13 +70,13 @@
 }
 
 /* Target specific styles for signup and login buttons */
-.signup-btn,
+/* .signup-btn,
 .login-btn {
-  text-decoration: none; /* Remove underline */
-  outline: none; /* Remove focus outline */
-  box-shadow: none; /* Remove focus shadow */
-  background-color: transparent; /* Ensure no background flash */
-}
+  text-decoration: none; 
+  outline: none; 
+  box-shadow: none;
+  background-color: transparent;
+} */
 
 
 /* .signup-btn:focus,
