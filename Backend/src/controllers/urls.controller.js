@@ -50,6 +50,8 @@ const createShortURL = async (req, res) => {
     // const fullShortUrl = `${renderLink}/s/${shortUrlNanoId}`; // Add '/s/' path segment
 
     const fullShortUrl = `${renderLink}/api/urls/s/${shortUrlNanoId}`;
+    console.log("Generated Full Short URL:", fullShortUrl);  // Check if URL looks correct
+
 
     // Validate expiration date format
     if (expirationDate && isNaN(new Date(expirationDate).getTime())) {
